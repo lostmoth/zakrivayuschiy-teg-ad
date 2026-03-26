@@ -14,7 +14,8 @@ if (saveBtn && dialog) {
 }
 
 if (okBtn && dialog) {
-  okBtn.addEventListener('click', () => {
+  okBtn.addEventListener('click', (e) => {
+    e.preventDefault();
     dialog.close();
   });
 }
