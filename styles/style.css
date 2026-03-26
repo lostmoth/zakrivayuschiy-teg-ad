@@ -143,9 +143,20 @@
   border: 2px solid #000;
 }
 
+/* Modal dialog styles */
+.modal {
+  border: none;
+  border-radius: 8px;
+  padding: 20px;
+  width: min(90%, 340px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.modal__form { display:flex; flex-direction:column; gap:16px; align-items:center; }
+.modal__actions { display:flex; gap:12px; justify-content:center; }
+.modal__button { padding:8px 16px; border:2px solid #000; background:#fff; cursor:pointer; font-family: var(--accent-font), serif; }
+
 .save-button {
   inline-size: 100%;
-  block-size: 100%;
   background-color: transparent;
   font-family: var(--accent-font), serif;
   font-size: 14px;
@@ -157,13 +168,44 @@
   block-size: 55px;
 }
 
+.first {
+  filter: brightness(150%);
+}
+
+.second {
+  filter: blur(4.0625rem);
+}
+
+.third {
+  filter: opacity(0.8);
+}
+
+.fourth {
+  filter: contrast(20%)
+}
+
+.fifth {
+  filter: grayscale(0.8);
+}
+
+.sixth {
+  filter: saturate(180%);
+}
+
+.seventh {
+  filter: sepia(180%);
+}
+
+.eight {
+  filter: inver(0.8);
+}
 
 @media (width <= 375px) {
   .header, .post, .post__image {
     inline-size: 100dvi;
   }
 
-  .save-button{
+  .save-button {
     block-size: 84px;
     flex-direction: column;
   }
