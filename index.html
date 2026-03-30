@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
@@ -475,34 +475,31 @@
           </div>
         </div>
       </section>
+      <section class="footer">
+        <button
+          type="button"
+          onclick="window['dialog'].showModal()"
+          aria-controls="dialog"
+          class="save-button button"
+        >
+          <svg width="28" height="28">
+            <use href="./svg/floppy.svg#icon-floppy"></use>
+          </svg>
+          <span class="button__text">Сохранить на память</span>
+        </button>
+        <dialog id="dialog" class="dialog">
+          <svg width="39" height="39" class="dialog__svg">
+            <use href="./svg/floppy.svg#icon-floppy"></use>
+          </svg>
+          <p class="dialog__text">Вставьте дискету, чтобы продолжить</p>
+          <form method="dialog" class="dialog__form">
+            <button type="submit" class="dialog__button button">
+              <span class="button__text">ок</span>
+            </button>
+          </form>
+        </dialog>
+      </section>
     </main>
-    <section class="footer">
-      <button
-        type="button"
-        onclick="window['dialog'].showModal()"
-        aria-controls="dialog"
-        class="save-button button"
-      >
-        <svg width="28" height="28">
-          <use href="./svg/floppy.svg#icon-floppy"></use>
-        </svg>
-        <span class="button__text">Сохранить на память</span>
-      </button>
-      <dialog id="dialog" class="dialog">
-        <svg width="39" height="39" class="dialog__svg">
-          <use href="./svg/floppy.svg#icon-floppy"></use>
-        </svg>
-        <p class="dialog__text">Вставьте дискету, чтобы продолжить</p>
-        <form method="dialog" class="dialog__form">
-          <button
-          type="submit"
-            class="dialog__button button"
-          >
-            <span class="button__text">ок</span>
-          </button>
-        </form>
-      </dialog>
-    </section>
 
     <script src="./scripts/like.js"></script>
   </body>

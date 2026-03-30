@@ -161,7 +161,6 @@
 .footer {
   margin-inline: auto;
   margin-bottom: 100px;
-  margin-top: 50px;
   inline-size: clamp(306px, calc((100vw - 375px) * 29 / 1065 + 306px), 335px);
   border: 2px solid var(--accent-color);
 }
