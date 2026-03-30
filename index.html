@@ -493,13 +493,14 @@
           <use href="./svg/floppy.svg#icon-floppy"></use>
         </svg>
         <p class="dialog__text">Вставьте дискету, чтобы продолжить</p>
-        <button
-          type="button"
-          onclick="window['dialog'].close()"
-          class="dialog__button button"
-        >
-          <span class="button__text">ок</span>
-        </button>
+        <form method="dialog" class="dialog__form">
+          <button
+          type="submit"
+            class="dialog__button button"
+          >
+            <span class="button__text">ок</span>
+          </button>
+        </form>
       </dialog>
     </footer>
 
