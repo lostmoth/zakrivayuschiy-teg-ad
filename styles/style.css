@@ -14,7 +14,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif;
-  font-variation-settings: 'wght' 400;
+  font-variation-settings: "wght" 400;
   background-image: var(--background);
   background-position: center;
   background-size: cover;
@@ -32,7 +32,7 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  border: 2px solid #000;
+  border: 2px solid var(--accent-color);
   margin-block: 100px;
 }
 
@@ -54,29 +54,29 @@
   align-items: center;
 }
 
-.post {
-  border: 2px solid #000;
+.card {
+  border: 2px solid var(--accent-color);
   inline-size: clamp(375px, calc(30.5154639vw + 260.568px), 698px);
   padding-bottom: 25px;
   position: relative;
 }
 
-.post__title {
+.card__title {
   padding-inline: 10px;
   padding-block: 3px;
   font-size: 18px;
-  font-variation-settings: 'wght' 700;
+  font-variation-settings: "wght" 700;
 }
 
-.post__image {
-    inline-size: clamp(375px, calc(30.51760563vw + 256.55650633px), 696px);
-    block-size: clamp(375px, calc(30.51760563vw + 256.55650633px), 696px);
-    margin-bottom: 25px;
-    position: relative;
-    z-index: 1;
+.card__image {
+  inline-size: clamp(375px, calc(30.51760563vw + 256.55650633px), 696px);
+  block-size: clamp(375px, calc(30.51760563vw + 256.55650633px), 696px);
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
 }
 
-.post__image img {
+.card__image img {
   display: block;
   height: 100%;
   width: 100%;
@@ -84,7 +84,7 @@
   object-position: center;
 }
 
-.post__image-label {
+.card__image-label {
   position: absolute;
   top: 25px;
   right: 13px;
@@ -93,24 +93,24 @@
   background: transparent;
   mix-blend-mode: hard-light;
   font-family: var(--accent-font), serif;
-  color: #000;
+  color: var(--accent-color);
   opacity: 0.5;
   text-shadow:
-  -1px 0 #fff, 
-  0 1px #fff, 
-  1px 0 #fff, 
-  0 -1px #fff;
+    -1px 0 var(--background-color),
+    0 1px var(--background-color),
+    1px 0 var(--background-color),
+    0 -1px var(--background-color);
 }
 
-@supports((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
-  .post__image-label {
-    -webkit-text-stroke: 1px #fff;
-    text-stroke: 1px #fff;
+@supports ((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
+  .card__image-label {
+    -webkit-text-stroke: 1px var(--background-color);
+    text-stroke: 1px var(--background-color);
     text-shadow: none;
   }
 }
 
-.post__content {
+.card__content {
   font-size: 18px;
   line-height: 21px;
   padding: 0 25px 0 25px;
@@ -125,20 +125,37 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: transparent;
   align-self: end;
 }
 
-.like-button {
+.card__like-button {
+  cursor: pointer;
+  background-color: transparent;
   font-family: var(--accent-font), serif;
   font-size: 14px;
   line-height: 90%;
-  border: 2px solid black;
+  border: 2px solid var(--accent-color);
   display: flex;
   justify-content: center;
   align-items: center;
   block-size: 100%;
-  inline-size: 130px;
+  inline-size: 123px;
+}
+
+.card__icon-button {
+  background: transparent;
+  cursor: pointer;
+  block-size: 100%;
+  border: 2px solid transparent;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  border-color: var(--accent-color);
+  transition: border-color 0.3s ease;
 }
 
 .footer {
@@ -146,7 +163,7 @@
   margin-bottom: 100px;
   margin-top: 50px;
   inline-size: clamp(306px, calc((100vw - 375px) * 29 / 1065 + 306px), 335px);
-  border: 2px solid #000;
+  border: 2px solid var(--accent-color);
 }
 
 .save-button {
@@ -171,8 +188,8 @@
   block-size: 191px;
   padding-block: 30px;
   padding-inline: 40px;
-  background-color: #fff;
-  border: 2px solid #000;
+  background-color: var(--background-color);
+  border: 2px solid var(--accent-color);
 }
 
 .dialog[open] {
@@ -192,7 +209,7 @@
   inline-size: clamp(257px, calc(244.32px + 0.99vw), 293px);
   block-size: 38px;
   background: transparent;
-  border: 2px solid #000;
+  border: 2px solid var(--accent-color);
 }
 
 .dialog::backdrop {
@@ -212,7 +229,7 @@
 }
 
 .fourth {
-  filter: contrast(20%)
+  filter: contrast(20%);
 }
 
 .fifth {
@@ -231,8 +248,117 @@
   filter: invert(0.8) opacity(0.3);
 }
 
+.button {
+  background-color: var(--background-color);
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0px 0px var(--accent-color);
+  transition: box-shadow 0.3s ease;
+}
+
+.button::before {
+  content: "";
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  transform-origin: left;
+  transition: transform ease-in-out 0.5s;
+}
+
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button__text {
+  color: var(--background-color);
+  mix-blend-mode: difference;
+  position: relative;
+  z-index: 2;
+}
+
+.save-button svg {
+  color: var(--background-color);
+  position: relative;
+  z-index: 2;
+  mix-blend-mode: difference;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.core {
+  fill: transparent;
+  transition: fill 0.3s 0.03s linear;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--contour-color);
+  transition: fill 0.3s linear;
+}
+
+.card__icon-button:active .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--contour-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.card__icon-button:active .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.contour {
+  fill: var(--contour-color);
+  transition: 0.1s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s 0.06s linear;
+}
+
+.like-icon.is-liked .heart {
+  animation: like-scale 0.3s 0.1s ease-in 1;
+}
+
+.like-icon.is-liked .sparks {
+  animation: like-sparks 0.3s 0.3s ease-in 1;
+}
+
 @media (width <= 375px) {
-  .header, .post, .post__image {
+  .header,
+  .card,
+  .card__image {
     inline-size: 100dvi;
   }
 

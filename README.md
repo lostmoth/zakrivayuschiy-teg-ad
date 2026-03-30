@@ -1,1 +1,1 @@
-https://github.com/lostmoth/zakrivayuschiy-teg-ad
+https://lostmoth.github.io/zakrivayuschiy-teg-ad/
