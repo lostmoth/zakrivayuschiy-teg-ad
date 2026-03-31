@@ -481,7 +481,7 @@
         type="button"
         aria-controls="dialog"
         class="save-button button"
-        id="save-button"
+        onclick="window['dialog'].showModal()"
       >
         <svg width="28" height="28">
           <use href="./svg/floppy.svg#icon-floppy"></use>
@@ -494,12 +494,9 @@
           <use href="./svg/floppy.svg#icon-floppy"></use>
         </svg>
         <p class="dialog__text">Вставьте дискету, чтобы продолжить</p>
-
-        <form method="dialog" class="dialog__form">
-          <button type="submit" class="dialog__button button">
-            <span class="button__text">ок</span>
-          </button>
-        </form>
+        <button type="button" onclick="window['dialog'].close()" class="dialog__button button">
+          <span class="button__text">ок</span>
+        </button>
       </dialog>
     </footer>
     <script src="./scripts/like.js"></script>

@@ -355,10 +355,6 @@
   animation: like-sparks 0.3s 0.3s ease-in 1;
 }
 
-.dialog__form {
-  display: contents;
-}
-
 @media (width <= 375px) {
   .header,
   .card,
